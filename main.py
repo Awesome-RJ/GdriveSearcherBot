@@ -34,10 +34,10 @@ async def search(_, message):
     query = message.text.split(' ',maxsplit=1)[1]
     m = await message.reply_text("**Searching....**")
     data = drive.drive_list(query)
-    
+
     results = len(data)
     i = 0
-    i = i + RESULTS_COUNT
+    i += RESULTS_COUNT
 
     if results == 0:
         await m.edit(text="Found Literally Nothing.")
